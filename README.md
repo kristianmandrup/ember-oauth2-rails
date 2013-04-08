@@ -32,6 +32,8 @@ Or using coffee ;)
 * authorize_with provider_id - `App.oauth.authorize()` for provider
 * configure_oauth2_for(provider_name)
 
+These helpers are also globally available as class methods on `EmberOauth2` for use in asset files.
+
 The `oauth_on_redirect` should be used in your view (or `render text: script` in controller action)
 
 You can use the helpers directly in your Rails asset pipeline, fx using `.erb`
@@ -39,11 +41,11 @@ You can use the helpers directly in your Rails asset pipeline, fx using `.erb`
 ```erb
 # oauth_config.js.coffee.erb
 
-<%= configure_oauth2_for :facebook, client_id: 'xcxzvx', redirect_uri: 'https://oauth2-login-demo.appspot.com/oauth/callback', scope: 'public read' %>
+<%= EmberOauth2.configure_oauth2_for :facebook, client_id: 'xcxzvx', redirect_uri: 'https://oauth2-login-demo.appspot.com/oauth/callback', scope: 'public read' %>
 
 # ...
 
-<%= authorize_with(my_provider_id) %>
+<%= EmberOauth2.authorize_with(my_provider_id) %>
 ```
 
 ## Register Oauth callbacks

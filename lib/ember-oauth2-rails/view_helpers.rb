@@ -44,4 +44,8 @@ App.oauth.authorize();
 }
     end     
   end
+
+  extend ViewHelpers
 end
+
+EmberOauth2 = EmberOauth2Rails
