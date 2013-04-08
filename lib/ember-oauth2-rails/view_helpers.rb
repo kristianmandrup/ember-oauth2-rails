@@ -14,12 +14,12 @@ App.oauth.authorize();
 }
     end
 
-    def configure_oauth2_for name = :facebook
+    def configure_oauth2_for name = :facebook, options = {}
       meth = "configure_oauth2_#{name}"
       unless respond_to? meth
         raise "No Ember-Oauth2 config helper has been defined for Oauth provider: #{name}"
       end
-      send(meth) 
+      send meth, options[:client_id], options[:redirect_uri], options[:scope]
     end
 
     def configure_oauth2_google client_id, redirect_uri, scope = nil

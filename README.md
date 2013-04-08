@@ -39,7 +39,7 @@ You can use the helpers directly in your Rails asset pipeline, fx using `.erb`
 ```erb
 # oauth_config.js.coffee.erb
 
-<%= configure_oauth2_for :facebook %>
+<%= configure_oauth2_for :facebook, client_id: 'xcxzvx', redirect_uri: 'https://oauth2-login-demo.appspot.com/oauth/callback', scope: 'public read' %>
 
 # ...
 
